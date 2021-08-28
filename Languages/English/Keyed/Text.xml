@@ -6,4 +6,5 @@
 	<SA.disableFilthGenerationForSentient>Disable filth generation for sentient animals</SA.disableFilthGenerationForSentient>
 	<SA.enableCleaningJobForSentient>Enable cleaning job for sentient animals</SA.enableCleaningJobForSentient>
 	<SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>
+	<SA.inheritSentientFromParent>Inherit sentient from parent upon birth</SA.inheritSentientFromParent>
 </LanguageData>

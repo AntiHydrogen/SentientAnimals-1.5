@@ -36,6 +36,23 @@ namespace SentientAnimals
         }
     }
 
+    [HarmonyPatch(typeof(Hediff_Pregnant), "DoBirthSpawn")]
+    public static class Patch_DoBirthSpawn
+    {
+        public static Pawn _mother;
+        public static Pawn _father;
+        private static void Prefix(Pawn mother, Pawn father)
+        {
+            _mother = mother;
+            _father = father;
+        }
+        private static void Postfix(Pawn mother, Pawn father)
+        {
+            _mother = null;
+            _father = null;
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn), "SpawnSetup")]
     public static class Patch_SpawnSetup
     {
@@ -45,8 +62,33 @@ namespace SentientAnimals
             {
                 if (Rand.Chance(SentientAnimalsMod.settings.naturalSentientChance))
                 {
-                    var hediff = HediffMaker.MakeHediff(SA_DefOf.SA_Sentient, __instance);
-                    __instance.health.AddHediff(hediff);
+                    __instance.MakeSentient();
+                }
+                else if (SentientAnimalsMod.settings.inheritSentientFromParent && Patch_DoBirthSpawn._mother != null)
+                {
+                    bool motherIsSentient = Patch_DoBirthSpawn._mother.IsSentient();
+                    if (Patch_DoBirthSpawn._father != null)
+                    {
+                        bool fatherIsSentient = Patch_DoBirthSpawn._father.IsSentient();
+                        if (motherIsSentient && fatherIsSentient)
+                        {
+                            __instance.MakeSentient();
+                        }
+                        else if (motherIsSentient || fatherIsSentient)
+                        {
+                            if (Rand.Chance(0.25f))
+                            {
+                                __instance.MakeSentient();
+                            }
+                        }
+                    }
+                    else if (motherIsSentient)
+                    {
+                        if (Rand.Chance(0.25f))
+                        {
+                            __instance.MakeSentient();
+                        }
+                    }
                 }
             }
         }
@@ -63,8 +105,7 @@ namespace SentientAnimals
                 {
                     if (Rand.Chance(SentientAnimalsMod.settings.naturalSentientChance))
                     {
-                        var hediff = HediffMaker.MakeHediff(SA_DefOf.SA_Sentient, __instance);
-                        __instance.health.AddHediff(hediff);
+                        __instance.MakeSentient();
                     }
                 }
             }
@@ -415,6 +456,7 @@ namespace SentientAnimals
                 command_Toggle.isActive = (() => __instance.Drafted);
                 command_Toggle.toggleAction = delegate
                 {
+                    __instance.jobs.debugLog = true;
                     if (__instance.drafter is null)
                     {
                         if (__instance.RaceProps.Animal)
@@ -457,7 +499,7 @@ namespace SentientAnimals
 
             foreach (var g in __result)
             {
-                if (g is Command_Toggle command && command.defaultDesc == "CommandToggleDraftDesc".Translate())
+                if (__instance.IsSentient() && g is Command_Toggle command && command.defaultDesc == "CommandToggleDraftDesc".Translate())
                 {
                     continue;
                 }

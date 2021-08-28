@@ -16,6 +16,7 @@ namespace SentientAnimals
         public bool disableFilthGenerationForSentient = true;
         public bool enableCleaningJobForSentient = true;
         public bool enableNursingJobForSentient = true;
+        public bool inheritSentientFromParent = false;
 
         public override void ExposeData()
         {
@@ -25,6 +26,7 @@ namespace SentientAnimals
             Scribe_Values.Look(ref enableTalkingForSentient, "enableTalkingForSentient", true);
             Scribe_Values.Look(ref enableCleaningJobForSentient, "enableCleaningJobForSentient", true);
             Scribe_Values.Look(ref enableNursingJobForSentient, "enableNursingJobForSentient", true);
+            Scribe_Values.Look(ref inheritSentientFromParent, "inheritSentientFromParent", false);
         }
 
         public void DoSettingsWindowContents(Rect inRect)
@@ -38,6 +40,7 @@ namespace SentientAnimals
             listingStandard.CheckboxLabeled("SA.disableFilthGenerationForSentient".Translate(), ref disableFilthGenerationForSentient);
             listingStandard.CheckboxLabeled("SA.enableCleaningJobForSentient".Translate(), ref enableCleaningJobForSentient);
             listingStandard.CheckboxLabeled("SA.enableNursingJobForSentient".Translate(), ref enableNursingJobForSentient);
+            listingStandard.CheckboxLabeled("SA.inheritSentientFromParent".Translate(), ref inheritSentientFromParent);
             listingStandard.End();
             base.Write();
         }

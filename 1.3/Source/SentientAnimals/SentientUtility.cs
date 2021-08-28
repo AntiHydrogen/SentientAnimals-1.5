@@ -24,5 +24,15 @@ namespace SentientAnimals
         {
             return pawn.health.capacities.CapableOf(PawnCapacityDefOf.Talking);
         }
+
+        public static void MakeSentient(this Pawn pawn)
+        {
+            BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
+            if (brain != null && pawn.health.hediffSet.GetFirstHediffOfDef(SA_DefOf.SA_Sentient) is null)
+            {
+                var hediff = HediffMaker.MakeHediff(SA_DefOf.SA_Sentient, pawn, brain);
+                pawn.health.AddHediff(hediff);
+            }
+        }
     }
 }
