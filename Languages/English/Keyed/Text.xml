@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-	<SA.NaturalSentientChanceUponTamingOrAfterBirth>Natural sentient chance upon taming or birth: </SA.NaturalSentientChanceUponTamingOrAfterBirth>
-	<SA.enableTalkingForSentient>Enable talking for sentient animals</SA.enableTalkingForSentient>
-	<SA.disableFilthGenerationForSentient>Disable filth generation for sentient animals</SA.disableFilthGenerationForSentient>
-	<SA.enableCleaningJobForSentient>Enable cleaning job for sentient animals</SA.enableCleaningJobForSentient>
-	<SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>
-	<SA.inheritSentientFromParent>Inherit sentient from parent upon birth</SA.inheritSentientFromParent>
+  <SA.NaturalSentientChanceUponTamingOrAfterBirth>Natural sentient chance upon taming or birth: </SA.NaturalSentientChanceUponTamingOrAfterBirth>
+  <SA.enableTalkingForSentient>Enable talking for sentient animals</SA.enableTalkingForSentient>
+  <SA.disableFilthGenerationForSentient>Disable filth generation for sentient animals</SA.disableFilthGenerationForSentient>
+  <SA.enableCleaningJobForSentient>Enable cleaning job for sentient animals</SA.enableCleaningJobForSentient>
+  <SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>
+  <SA.inheritSentientFromParent>Inherit sentient from parent upon birth</SA.inheritSentientFromParent>
+  <SA.modVersion>Installed mod-version: {0}</SA.modVersion>
 </LanguageData>
