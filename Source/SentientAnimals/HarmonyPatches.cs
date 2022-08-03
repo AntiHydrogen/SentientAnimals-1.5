@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -21,12 +23,14 @@ public static class HarmonyPatches
 
         var harmony = new Harmony("SentientAnimals.Mod");
         harmony.PatchAll();
-        foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
+        foreach (var thingDef in DefDatabase<ThingDef>.AllDefs.Where(def => def.race?.Animal == true))
         {
-            if (thingDef.race != null && thingDef.race.Animal)
+            if (thingDef.recipes == null)
             {
-                thingDef.recipes.Add(SA_DefOf.SA_MakeSentient);
+                thingDef.recipes = new List<RecipeDef>();
             }
+
+            thingDef.recipes.Add(SA_DefOf.SA_MakeSentient);
         }
     }
 }
