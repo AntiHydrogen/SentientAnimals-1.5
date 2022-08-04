@@ -8,6 +8,7 @@ using Verse;
 namespace SentientAnimals;
 
 [HarmonyPatch(typeof(FoodUtility), "BestFoodSourceOnMap")]
+[HarmonyBefore("net.quicksilverfox.rimworld.mod.animalslogic")]
 public static class BestFoodSourceOnMap_Patch
 {
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
