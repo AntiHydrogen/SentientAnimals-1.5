@@ -6,5 +6,8 @@
   <SA.enableCleaningJobForSentient>Enable cleaning job for sentient animals</SA.enableCleaningJobForSentient>
   <SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>
   <SA.inheritSentientFromParent>Inherit sentient from parent upon birth</SA.inheritSentientFromParent>
+  <SA.animalSpecificChances>Animal-specific natural sentient chance</SA.animalSpecificChances>
+  <SA.resetall.confirm>Resetting all animals to the base-value</SA.resetall.confirm>
+  <SA.resetall.button>Reset</SA.resetall.button>
   <SA.modVersion>Installed mod-version: {0}</SA.modVersion>
 </LanguageData>

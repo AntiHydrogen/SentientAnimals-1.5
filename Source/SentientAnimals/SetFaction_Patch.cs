@@ -19,7 +19,13 @@ public static class SetFaction_Patch
             return;
         }
 
-        if (Rand.Chance(SentientAnimalsMod.settings.naturalSentientChance))
+        var chance = SentientAnimalsMod.settings.naturalSentientChance;
+        if (SentientAnimalsMod.settings.CustomSpawnChances?.ContainsKey(__instance.def.defName) == true)
+        {
+            chance = SentientAnimalsMod.settings.CustomSpawnChances[__instance.def.defName];
+        }
+
+        if (Rand.Chance(chance))
         {
             __instance.MakeSentient();
         }

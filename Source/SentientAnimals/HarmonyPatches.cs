@@ -11,6 +11,7 @@ namespace SentientAnimals;
 public static class HarmonyPatches
 {
     public static readonly MethodInfo pawnToShowInfoAboutMethod;
+    private static List<PawnKindDef> allAnimals;
 
     static HarmonyPatches()
     {
@@ -32,5 +33,22 @@ public static class HarmonyPatches
 
             thingDef.recipes.Add(SA_DefOf.SA_MakeSentient);
         }
+    }
+
+    public static List<PawnKindDef> AllAnimals
+    {
+        get
+        {
+            if (allAnimals == null || allAnimals.Count == 0)
+            {
+                allAnimals = (from animal in DefDatabase<PawnKindDef>.AllDefsListForReading
+                    where animal.RaceProps?.Animal == true
+                    orderby animal.label
+                    select animal).ToList();
+            }
+
+            return allAnimals;
+        }
+        set => allAnimals = value;
     }
 }

@@ -1,5 +1,8 @@
 # Changelog for SentientAnimals
 
+1.3.4 - Added setting the chance of being sentient per animal
+
+
 1.3.3 - Should work better with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1098354593]Animals Logic[/url] now.
 
 
