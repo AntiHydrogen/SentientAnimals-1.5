@@ -5,6 +5,8 @@
 Update of Ghosts mod
 https://github.com/pale-ghost/sentientanimals
 
+- Added option for setting the sentient-chance per animal'
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 
 	

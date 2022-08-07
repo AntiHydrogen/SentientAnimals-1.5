@@ -5,6 +5,8 @@
     <label>sentient</label>
     <description>Sentient</description>
     <hediffClass>SentientAnimals.Hediff_Sentient</hediffClass>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
     <stages>
       <li>
         <capMods>
