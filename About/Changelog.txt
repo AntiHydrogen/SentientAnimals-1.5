@@ -1,5 +1,8 @@
 # Changelog for SentientAnimals
 
+1.3.6 - Sentient animals should no longer try to roam
+
+
 1.3.5 - Sentient animals should no longer cost 20% of normal. As they have a skill-counter but no skills that affected the price.
 
 
