@@ -31,5 +31,12 @@ public static class SentientUtility
 
         var hediff = HediffMaker.MakeHediff(SA_DefOf.SA_Sentient, pawn, brain);
         pawn.health.AddHediff(hediff);
+
+        if (!HarmonyPatches.AnimalWeaponsLoaded || !SentientAnimalsMod.settings.onlySentientAnimalsGetsWeapons)
+        {
+            return;
+        }
+
+        HarmonyPatches.VerifyAnimalWeapon(pawn, true);
     }
 }

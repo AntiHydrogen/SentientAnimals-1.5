@@ -7,6 +7,8 @@
   <SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>
   <SA.inheritSentientFromParent>Inherit sentient from parent upon birth</SA.inheritSentientFromParent>
   <SA.animalSpecificChances>Animal-specific natural sentient chance</SA.animalSpecificChances>
+  <SA.OnlySentientAnimalsGetsWeapons>Only sentient animals can wield weapons</SA.OnlySentientAnimalsGetsWeapons>
+  <SA.OnlySentientAnimalsGetsWeapons.Tooltip>The Animal Weapon-mod makes all animals able to carry weapons. This option disables that for all animals that are not sentient. If game is running, reload save needed to have effect.</SA.OnlySentientAnimalsGetsWeapons.Tooltip>
   <SA.resetall.confirm>Resetting all animals to the base-value</SA.resetall.confirm>
   <SA.resetall.button>Reset</SA.resetall.button>
   <SA.modVersion>Installed mod-version: {0}</SA.modVersion>

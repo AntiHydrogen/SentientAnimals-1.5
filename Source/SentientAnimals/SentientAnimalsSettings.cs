@@ -24,6 +24,7 @@ internal class SentientAnimalsSettings : ModSettings
     public bool enableTalkingForSentient = true;
     public bool inheritSentientFromParent;
     public float naturalSentientChance = 0.05f;
+    public bool onlySentientAnimalsGetsWeapons;
     private Vector2 scrollPosition;
 
     public override void ExposeData()
@@ -38,6 +39,7 @@ internal class SentientAnimalsSettings : ModSettings
         Scribe_Values.Look(ref enableCleaningJobForSentient, "enableCleaningJobForSentient", true);
         Scribe_Values.Look(ref enableNursingJobForSentient, "enableNursingJobForSentient", true);
         Scribe_Values.Look(ref inheritSentientFromParent, "inheritSentientFromParent");
+        Scribe_Values.Look(ref onlySentientAnimalsGetsWeapons, "onlySentientAnimalsGetsWeapons");
     }
 
     public void DoSettingsWindowContents(Rect inRect)
@@ -55,6 +57,11 @@ internal class SentientAnimalsSettings : ModSettings
         listingStandard.SliderLabeled("SA.NaturalSentientChanceUponTamingOrAfterBirth".Translate(),
             ref naturalSentientChance, naturalSentientChance.ToStringPercent());
         naturalSentientChance = (float)Math.Round(naturalSentientChance, 2);
+        if (HarmonyPatches.AnimalWeaponsLoaded)
+        {
+            listingStandard.CheckboxLabeled("SA.OnlySentientAnimalsGetsWeapons".Translate(),
+                ref onlySentientAnimalsGetsWeapons, "SA.OnlySentientAnimalsGetsWeapons.Tooltip".Translate());
+        }
 
         if (SentientAnimalsMod.currentVersion != null)
         {

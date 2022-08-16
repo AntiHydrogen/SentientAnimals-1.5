@@ -8,6 +8,12 @@ public static class Patch_SpawnSetup
 {
     private static void Postfix(Pawn __instance, bool respawningAfterLoad)
     {
+        if (HarmonyPatches.AnimalWeaponsLoaded && SentientAnimalsMod.settings.onlySentientAnimalsGetsWeapons &&
+            respawningAfterLoad && __instance.RaceProps.Animal)
+        {
+            HarmonyPatches.VerifyAnimalWeapon(__instance, __instance.IsSentient());
+        }
+
         if (respawningAfterLoad || !__instance.RaceProps.Animal || __instance.IsSentient())
         {
             return;

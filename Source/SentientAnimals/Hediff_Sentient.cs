@@ -55,6 +55,16 @@ public class Hediff_Sentient : HediffWithComps
         {
             customJoyCount = 0;
         }
+
+        if (!HarmonyPatches.AnimalWeaponsLoaded || !SentientAnimalsMod.settings.onlySentientAnimalsGetsWeapons)
+        {
+            return;
+        }
+
+        if (GenTicks.TicksGame % GenTicks.TickLongInterval == 0)
+        {
+            HarmonyPatches.VerifyAnimalWeapon(pawn, pawn.IsSentient());
+        }
     }
 
     public override void ExposeData()
