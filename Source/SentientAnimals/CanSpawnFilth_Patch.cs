@@ -9,7 +9,7 @@ public static class CanSpawnFilth_Patch
 {
     private static void Postfix(CompSpawnerFilth __instance, ref bool __result)
     {
-        if (!__result)
+        if (!__result || !SentientAnimalsMod.settings.disableFilthGenerationForSentient)
         {
             return;
         }

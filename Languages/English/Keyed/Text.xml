@@ -2,6 +2,7 @@
 <LanguageData>
   <SA.NaturalSentientChanceUponTamingOrAfterBirth>Natural sentient chance upon taming or birth: </SA.NaturalSentientChanceUponTamingOrAfterBirth>
   <SA.enableTalkingForSentient>Enable talking for sentient animals</SA.enableTalkingForSentient>
+  <SA.alwaysStartWithSentientAnimals>Always start new games with sentient animals</SA.alwaysStartWithSentientAnimals>
   <SA.disableFilthGenerationForSentient>Disable filth generation for sentient animals</SA.disableFilthGenerationForSentient>
   <SA.enableCleaningJobForSentient>Enable cleaning job for sentient animals</SA.enableCleaningJobForSentient>
   <SA.enableNursingJobForSentient>Enable nursing job for sentient animals</SA.enableNursingJobForSentient>

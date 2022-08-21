@@ -15,6 +15,7 @@ internal class SentientAnimalsSettings : ModSettings
     private static string searchText = "";
     private readonly Color alternateBackground = new Color(0.1f, 0.1f, 0.1f, 0.5f);
     private readonly Vector2 iconSize = new Vector2(48f, 48f);
+    public bool alwaysStartWithSentientAnimals;
     public Dictionary<string, float> CustomSpawnChances = new Dictionary<string, float>();
     private List<string> customSpawnChancesKeys;
     private List<float> customSpawnChancesValues;
@@ -36,6 +37,7 @@ internal class SentientAnimalsSettings : ModSettings
             ref customSpawnChancesKeys, ref customSpawnChancesValues);
         Scribe_Values.Look(ref disableFilthGenerationForSentient, "disableFilthGenerationForSentient", true);
         Scribe_Values.Look(ref enableTalkingForSentient, "enableTalkingForSentient", true);
+        Scribe_Values.Look(ref alwaysStartWithSentientAnimals, "alwaysStartWithSentientAnimals");
         Scribe_Values.Look(ref enableCleaningJobForSentient, "enableCleaningJobForSentient", true);
         Scribe_Values.Look(ref enableNursingJobForSentient, "enableNursingJobForSentient", true);
         Scribe_Values.Look(ref inheritSentientFromParent, "inheritSentientFromParent");
@@ -48,6 +50,8 @@ internal class SentientAnimalsSettings : ModSettings
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(rect);
         listingStandard.CheckboxLabeled("SA.enableTalkingForSentient".Translate(), ref enableTalkingForSentient);
+        listingStandard.CheckboxLabeled("SA.alwaysStartWithSentientAnimals".Translate(),
+            ref alwaysStartWithSentientAnimals);
         listingStandard.CheckboxLabeled("SA.disableFilthGenerationForSentient".Translate(),
             ref disableFilthGenerationForSentient);
         listingStandard.CheckboxLabeled("SA.enableCleaningJobForSentient".Translate(),
