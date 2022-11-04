@@ -15,7 +15,7 @@ public static class FloatMenuMakerMap_Patch
         var shouldSkip = AccessTools.Method(typeof(SentientUtility), "IsSentient");
         var codes = instructions.ToList();
         var pawnField = AccessTools.Field(typeof(FloatMenuMakerMap).GetNestedTypes(AccessTools.all)
-            .First(c => c.Name.Contains("c__DisplayClass8_0")), "pawn");
+            .First(c => c.Name.Contains("c__DisplayClass9_0")), "pawn");
         var skillsField = AccessTools.Field(typeof(Pawn), "skills");
         var constructionDefField = AccessTools.Field(typeof(SkillDefOf), "Construction");
         var patched = false;

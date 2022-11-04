@@ -84,7 +84,7 @@ public class Recipe_MakeSentient : RecipeWorker
                     "MessageMedicalOperationFailureRidiculous".Translate(surgeon.LabelShort, patient.LabelShort,
                         surgeon.Named("SURGEON"), patient.Named("PATIENT"), recipe.Named("RECIPE")),
                     LetterDefOf.NegativeEvent, patient);
-                HealthUtility.GiveInjuriesOperationFailureRidiculous(patient);
+                HealthUtility.GiveRandomSurgeryInjuries(patient, 65, null);
                 if (brain != null)
                 {
                     patient.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, num, 10f, -1f, surgeon, brain));
@@ -96,7 +96,7 @@ public class Recipe_MakeSentient : RecipeWorker
                     "MessageMedicalOperationFailureCatastrophic".Translate(surgeon.LabelShort, patient.LabelShort,
                         surgeon.Named("SURGEON"), patient.Named("PATIENT"), recipe.Named("RECIPE")),
                     LetterDefOf.NegativeEvent, patient);
-                HealthUtility.GiveInjuriesOperationFailureCatastrophic(patient, part);
+                HealthUtility.GiveRandomSurgeryInjuries(patient, 65, part);
                 patient.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, num, 20f, -1f, surgeon, brain));
             }
         }
@@ -106,7 +106,7 @@ public class Recipe_MakeSentient : RecipeWorker
                 "MessageMedicalOperationFailureMinor".Translate(surgeon.LabelShort, patient.LabelShort,
                     surgeon.Named("SURGEON"), patient.Named("PATIENT"), recipe.Named("RECIPE")),
                 LetterDefOf.NegativeEvent, patient);
-            HealthUtility.GiveInjuriesOperationFailureMinor(patient, part);
+            HealthUtility.GiveRandomSurgeryInjuries(patient, 20, part);
             patient.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, num, 1f, -1f, surgeon, brain));
             var hediff = HediffMaker.MakeHediff(HediffDefOf.Dementia, patient, brain);
             patient.health.AddHediff(hediff);

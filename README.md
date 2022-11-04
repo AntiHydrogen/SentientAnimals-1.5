@@ -6,6 +6,7 @@ Update of Ghosts mod
 https://github.com/pale-ghost/sentientanimals
 
 - Added option for setting the sentient-chance per animal
+- Added option to always start with sentient animals
 - Added an option when https://steamcommunity.com/sharedfiles/filedetails/?id=2497919470]Animal Weapon is loaded to only allow Sentient animals to wield weapons
 
 ![Image](https://i.imgur.com/pufA0kM.png)

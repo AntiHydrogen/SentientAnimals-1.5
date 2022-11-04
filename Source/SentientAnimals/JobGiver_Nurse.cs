@@ -37,7 +37,7 @@ public class JobGiver_Nurse : ThinkNode_JobGiver
             return false;
         }
 
-        if (FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn2,
+        if (FoodUtility.TryFindBestFoodSourceFor(pawn, pawn2,
                 pawn2.needs.food.CurCategory == HungerCategory.Starving,
                 out _, out _, false))
         {
@@ -63,10 +63,10 @@ public class JobGiver_Nurse : ThinkNode_JobGiver
         var t = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, PotentialWorkThingRequest, PathEndMode.OnCell,
             TraverseParms.For(pawn, Danger.Some), 100f, Predicate);
         Job job;
-        if (t is Pawn pawn2 && FoodUtility.TryFindBestFoodSourceFor_NewTemp(pawn, pawn2,
+        if (t is Pawn pawn2 && FoodUtility.TryFindBestFoodSourceFor(pawn, pawn2,
                 pawn2.needs.food.CurCategory == HungerCategory.Starving, out var foodSource, out var foodDef, false))
         {
-            var nutrition = FoodUtility.GetNutrition(foodSource, foodDef);
+            var nutrition = FoodUtility.GetNutrition(pawn2, foodSource, foodDef);
             job = JobMaker.MakeJob(JobDefOf.FeedPatient);
             job.targetA = foodSource;
             job.targetB = pawn2;
