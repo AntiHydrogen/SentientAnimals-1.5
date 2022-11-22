@@ -7,9 +7,9 @@ using Verse;
 
 namespace SentientAnimals;
 
-[HarmonyPatch(typeof(FoodUtility), "BestFoodSourceOnMap")]
+[HarmonyPatch(typeof(FoodUtility), "BestFoodSourceOnMap_NewTemp")]
 [HarmonyBefore("net.quicksilverfox.rimworld.mod.animalslogic")]
-public static class BestFoodSourceOnMap_Patch
+public static class BestFoodSourceOnMap_NewTemp_Patch
 {
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
     {
@@ -17,7 +17,7 @@ public static class BestFoodSourceOnMap_Patch
         var get_ToolUser = AccessTools.Method(typeof(RaceProperties), "get_ToolUser");
         var shouldSkip = AccessTools.Method(typeof(SentientUtility), "IsSentient");
         var pawnField = AccessTools.Field(typeof(FoodUtility).GetNestedTypes(AccessTools.all)
-            .First(c => c.Name.Contains("c__DisplayClass9_0")), "getter");
+            .First(c => c.Name.Contains("c__DisplayClass19_0")), "getter");
 
         var codes = instructions.ToList();
         var label = ilg.DefineLabel();
@@ -44,7 +44,7 @@ public static class BestFoodSourceOnMap_Patch
 
         if (!patched)
         {
-            Log.Error("[SentientAnimals] FoodUtility:BestFoodSourceOnMap Transpiler failed");
+            Log.Error("[SentientAnimals] FoodUtility:BestFoodSourceOnMap_NewTemp Transpiler failed");
         }
     }
 }

@@ -1,5 +1,9 @@
 # Changelog for SentientAnimals
 
+1.4.2 - Fixed the transpiler since the latest rimworld patch broke it.
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 
