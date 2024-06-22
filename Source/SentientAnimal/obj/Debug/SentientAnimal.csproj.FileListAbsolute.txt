@@ -1,0 +1,6 @@
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\Source\SentientAnimal\obj\Debug\SentientAnimal.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\Source\SentientAnimal\obj\Debug\SentientAnimal.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\Assemblies\SentientAnimals.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\Source\SentientAnimal\obj\Debug\SentientAnimal.csproj.CopyComplete
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\Source\SentientAnimal\obj\Debug\SentientAnimals.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SentientAnimals-1.5\1.5\Assemblies\SentientAnimals.dll
